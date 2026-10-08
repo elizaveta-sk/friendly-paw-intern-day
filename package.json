@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "build:web": "expo export --platform web"
+    ,"postinstall": "node scripts/repair-hermes-parser.cjs"
   },
   "dependencies": {
     "@expo/metro-runtime": "~6.1.2",
@@ -23,6 +24,10 @@
   "devDependencies": {
     "eslint": "^9.36.0",
     "jest": "29.7.0",
+    "source-map": "0.6.1",
     "typescript": "^5.9.2"
+  },
+  "overrides": {
+    "hermes-parser": "0.32.0"
   }
 }

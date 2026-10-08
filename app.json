@@ -1,3 +1,3 @@
 {
-  "expo": {"name":"Friendly Paw: Intern Day","slug":"friendly-paw-intern-day","version":"1.0.0","web":{"bundler":"metro","output":"static"}}
+  "expo": {"name":"Friendly Paw: Intern Day","slug":"friendly-paw-intern-day","version":"1.0.0","web":{"bundler":"metro","output":"single"}}
 }
