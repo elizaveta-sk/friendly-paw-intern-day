@@ -1,0 +1,5 @@
+// @ts-nocheck
+import React from 'react';
+import { View,Text,Pressable,StyleSheet } from 'react-native';
+export function ReportScreen({state,onChoice}) { const report=state.currentStepId==='midday-report'?'Midday progress report':'End-of-day report'; return <View style={s.modal}><Text style={s.eyebrow}>REPORT MOMENT</Text><Text style={s.title}>{report}</Text><Text style={s.copy}>Choose a clear status and decide whether to surface any risks.</Text>{state.availableChoices.map(c=><Pressable key={c.id} style={s.option} onPress={()=>onChoice(c.id)}><Text style={s.optionText}>{c.label}</Text><Text>→</Text></Pressable>)}</View>; }
+const s=StyleSheet.create({modal:{margin:16,padding:20,backgroundColor:'#25352c',borderRadius:20},eyebrow:{color:'#f3b45a',fontSize:11,fontWeight:'800',letterSpacing:1},title:{color:'#fff',fontSize:24,fontWeight:'800',marginTop:7},copy:{color:'#d9e0d8',lineHeight:20,marginTop:8,marginBottom:12},option:{backgroundColor:'#fff',borderRadius:12,padding:13,marginTop:8,flexDirection:'row',justifyContent:'space-between'},optionText:{fontWeight:'700',color:'#25352c'}});
