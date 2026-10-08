@@ -1,0 +1,6 @@
+// @ts-nocheck
+// Compact static timeline table; its public shape is covered by the data test.
+/** @type {import('../types/game.js').TimelineStep[]} */
+export const timeline = [
+  ['arrival','09:00','arrival',[], 'Arrive at Friendly Paw'],['standup','09:05','standup',['rafa','marcus','sofia'],'Daily standup'],['assignment','09:30','assignment',['marcus'],'Marcus assigns FP-142'],['focus-1','09:45','focus',['marcus'],'Focus block 1'],['hr-jay','10:00','hr',['jay'],'HR check-in #1'],['requirement-change','10:30','event',['sofia'],'PM requirement change','EV-1'],['production-bug','11:15','event',['marcus','dev'],'Production bug','EV-2'],['miscommunication','11:30','event',['marcus','sofia'],'Conflicting priorities','EV-3'],['dog-visit','12:00','event',['rafa'],'Dog visit','EV-5'],['midday-report','12:30','report',['grace'],'Midday progress report'],['gossip','13:00','event',['jay'],'Lunch gossip','EV-4'],['focus-2','13:30','focus',['dev'],'Focus block 2 and QA'],['review','15:00','review',['marcus','dev'],'Code review'],['one-on-one','15:30','mentor',['rafa'],'1:1 with mentor'],['eod-report','16:15','report',['grace'],'End-of-day report'],['end','17:00','end',[],'End-of-day review']
+].map(([id,time,kind,agentIds,description,eventId]) => ({id,time,kind,agentIds,description,requiresChoice:true,nextRule:'next-step',...(eventId ? {eventId} : {})}));

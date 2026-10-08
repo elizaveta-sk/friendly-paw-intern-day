@@ -1,0 +1,4 @@
+{
+  "compilerOptions": {"checkJs": true,"allowJs": true,"noEmit": true,"module": "NodeNext", "moduleResolution": "NodeNext", "jsx": "react-jsx", "skipLibCheck": true},
+  "exclude": ["node_modules", "dist"]
+}
