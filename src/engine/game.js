@@ -23,7 +23,7 @@ function enterStep(state,index) {
   const next = structuredClone(state); const step = timeline[index];
   next.currentStepId = step.id; next.clock = step.time;
   if (step.id === 'end') { next.phase = 'review'; next.availableChoices = []; return next; }
-  const messages = []; for (const id of step.agentIds) { const agent = agentById[id]; const reply = /** @type {import('../agents/brain.js').AgentReply} */ (getBrain(id).respond({agent,mood:next.agentMoods[id],memory:next.agentMemory[id],opinion:next.agentMemory[id].opinion,step,lastChoice:undefined,history:next.threads.all})); reply.messages.forEach((text) => messages.push({id:`${step.id}-${id}-${messages.length}`,senderId:id,text,timestamp:step.time,threadId:id})); }
+  const messages = []; for (const id of step.agentIds) { const agent = agentById[id]; const reply = /** @type {import('../agents/brain.js').AgentReply} */ (getBrain(id).respond({agent,mood:next.agentMoods[id],memory:next.agentMemory[id],opinion:next.agentMemory[id].opinion,values:next.values,step,lastChoice:undefined,history:next.threads.all})); reply.messages.forEach((text) => messages.push({id:`${step.id}-${id}-${messages.length}`,senderId:id,text,timestamp:step.time,threadId:id})); }
   next.threads.all.push(...messages);
   if (step.eventId) { const event = eventById[step.eventId]; next.triggeredEvents.push(event.id); next.availableChoices = event.choices; }
   else next.availableChoices = choicesFor(step, next);

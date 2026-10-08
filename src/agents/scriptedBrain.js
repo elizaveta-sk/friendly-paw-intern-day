@@ -7,6 +7,6 @@ export function scriptedRespond(ctx) {
   const agentLines = dialogue[ctx.agent.id]?.[situation] || dialogue[ctx.agent.id]?.arrival;
   const moodLines = agentLines?.[ctx.mood] || Object.values(agentLines || {})[0];
   const base = moodLines?.default || [`${ctx.agent.name} is considering the next move.`];
-  const callback = ctx.memory.flags.handled_gossip && ctx.agent.id === 'grace' ? ' I noticed you kept lunchtime professional.' : ctx.memory.flags.petted_dog && ctx.agent.id === 'rafa' ? ' The dog has entered a favorable review.' : '';
+  const callback = ctx.memory.flags.handled_gossip && ctx.agent.id === 'grace' ? ' I noticed you kept lunchtime professional.' : ctx.memory.flags.petted_dog && ctx.agent.id === 'rafa' ? ' The dog has entered a favorable review.' : ctx.agent.id === 'rafa' && ctx.values?.Proactivity < 48 ? ' What small question would turn waiting into progress?' : ctx.agent.id === 'rafa' && ctx.values?.Responsibility > 57 ? ' You have been taking ownership without making a show of it.' : '';
   return { messages: base.map((line) => `${line}${callback}`) };
 }

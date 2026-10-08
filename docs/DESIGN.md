@@ -18,3 +18,5 @@ Conflicts resolved: the single Web Audio chat blip wins over the general no-soun
 | Discipline | work deliberately, avoid speculation |
 | Consistency | follow through on reports |
 | Proactivity | clarify ambiguity, align leads |
+
+Rafa selects a value-sensitive nudge at 15:30 and in his touchpoints: high Responsibility earns ownership feedback; low Proactivity draws a reflective challenge. Event callbacks are retained as memory flags and surface in Grace’s, Rafa’s, and review copy.
