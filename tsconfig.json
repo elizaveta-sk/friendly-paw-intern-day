@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "checkJs": true,
+    "checkJs": false,
     "noEmit": true,
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "jsx": "react-jsx",
     "skipLibCheck": true,
-    "strict": false
+    "strict": true
   },
+  "include": ["src/types/**/*.ts"],
   "exclude": ["node_modules", "dist", "__tests__"]
 }
